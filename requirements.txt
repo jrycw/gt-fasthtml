@@ -1,0 +1,5 @@
+python-fasthtml
+polars
+pandas
+great_tables
+uvicorn
