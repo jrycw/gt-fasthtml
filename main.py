@@ -36,5 +36,5 @@ def get():
     return (
         Title("FastHTML-GT Website"),
         Titled("Great Tables shown in FastHTML", style="text-align:center"),
-        NotStr(sza_tbl().as_raw_html()),
+        NotStr(sza_tbl.as_raw_html()),
     )
