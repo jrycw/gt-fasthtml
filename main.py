@@ -1,3 +1,5 @@
+from functools import cache
+
 import polars as pl
 from fasthtml.common import NotStr, Title, Titled, fast_app
 from great_tables import GT, html
@@ -6,20 +8,25 @@ from great_tables.data import sza
 app, rt = fast_app()
 
 
+@cache
+def get_sza():
+    return pl.from_pandas(sza)
+
+
 @rt("/")
 def get():
     """
     https://docs.fastht.ml/tutorials/quickstart_for_web_devs.html#strings-and-conversion-order
     """
     sza_pivot = (
-        pl.from_pandas(sza)
+        get_sza()
         .filter((pl.col("latitude") == "20") & (pl.col("tst") <= "1200"))
         .select(pl.col("*").exclude("latitude"))
         .drop_nulls()
         .pivot(values="sza", index="month", on="tst", sort_columns=True)
     )
 
-    sza_tbl = (
+    sza_gt = (
         GT(sza_pivot, rowname_col="month")
         .data_color(
             domain=[90, 0],
@@ -36,5 +43,5 @@ def get():
     return (
         Title("FastHTML-GT Website"),
         Titled("Great Tables shown in FastHTML", style="text-align:center"),
-        NotStr(sza_tbl.as_raw_html()),
+        NotStr(sza_gt.as_raw_html()),
     )
