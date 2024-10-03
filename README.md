@@ -74,4 +74,4 @@ This guide will walk you through setting up a FastHTML application that renders 
 
 You should now see the table displayed in your browser at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-![image](https://github.com/user-attachments/assets/1199bf33-098e-4051-8a9e-8a9e586dec7e)
+![table](https://raw.githubusercontent.com/jrycw/gt-fasthtml/refs/heads/master/gt-fasthtml.png)
