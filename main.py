@@ -1,7 +1,7 @@
 from functools import cache
 
 import polars as pl
-from fasthtml.common import NotStr, Title, Titled, fast_app
+from fasthtml.common import NotStr, Title, Titled, fast_app, H1
 from great_tables import GT, html
 from great_tables.data import sza
 
@@ -42,6 +42,6 @@ def get():
 
     return (
         Title("FastHTML-GT Website"),
-        Titled("Great Tables shown in FastHTML", style="text-align:center"),
+        H1("Great Tables shown in FastHTML", style="text-align:center"),
         NotStr(sza_gt.as_raw_html()),
     )
