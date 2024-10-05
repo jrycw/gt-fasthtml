@@ -59,7 +59,7 @@ This guide will walk you through setting up a FastHTML application that renders 
 
         return (
             Title("FastHTML-GT Website"),
-            Titled("Great Tables shown in FastHTML", style="text-align:center"),
+            H1("Great Tables shown in FastHTML", style="text-align:center"),
             NotStr(sza_gt.as_raw_html()),
         )
    ```
