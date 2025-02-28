@@ -2,7 +2,7 @@
 
 ### Introduction
 
-This guide will walk you through setting up a FastHTML application that renders a table using the `GT` library.
+This guide will walk you through setting up a FastHTML application that renders a table using the `Great Tables` library.
 
 ### Steps
 
